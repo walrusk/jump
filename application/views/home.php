@@ -1,5 +1,7 @@
 <section id="content">
 			
-	jump
+	<article class="photo">
+		
+	</article>
 						
 </section>

@@ -25,5 +25,5 @@
 	<div id="wrap">
 	
 		<header>
-		
+			<h1><a href="<?=base_url()?>">Jump</a></h1>
 		</header>
