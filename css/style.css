@@ -1,61 +1,251 @@
+body {
+	background:url('../img/absurdidad.png');
+	font:16px/24px 'Courgette','Helvetica','Arial',sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color:#444;
+}
+
 #wrap {
-	width:960px;
-	margin:auto;
+	
 }
 
 header {
-	text-align:center;
+	border-top:5px solid #444;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
+
+header:hover {
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	
+	border-top:5px solid #000;
+}
+
+header:hover h1 a {color:#000;}
 
 h1 {
 	text-transform:uppercase;
-	font:bold 24px/24px Helvetica,Arial,sans-serif;
-	letter-spacing:1px;
+	font-size:24px;line-height:24px;
+	font-weight:bold;
+	letter-spacing:0;
+}
+
+a:link,
+a:visited,
+a:active {
+	color:#000;
+}
+
+/* photo max size: */
+section#content {
+	padding:0 15px;
+	width:700px;
+	margin:auto;
 }
 
 /*** HEADER ***/
 
 header h1 {
 	margin:0;
-	padding:20px 0;
+	padding:0;
+	text-align:center;
+	letter-spacing:1px;
 }
 
-header h1 a:link,
-header h1 a:active,
-header h1 a:visited {
-	color:#222;
+header h1 i {
+	font-size:36px;
+	line-height:24px;
+	vertical-align:middle;
+	
+	padding-left:8px;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+header h1 a:hover i {
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease; 
+	
+	-webkit-transform:rotate(6deg);
+    -moz-transform:rotate(6deg);
+    -o-transform:rotate(6deg);
+    transform:rotate(6deg);
+}
+
+header a,
+header a:link,
+header a:active,
+header a:visited {
+	color:#444;
 	text-decoration:none;
+	padding:25px 25px;
+	display:inline-block;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 
-header h1 a:hover {
-	color:#ccc;
+header a:hover {
+	color:#000;
+	letter-spacing:5px;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease; 
 }
+
+header h1 a:active {
+	position:relative;
+	top:1px;left:1px;
+}
+
+/*
+header h1 a:hover:after {
+	content:"\f083";
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease-in;
+	
+	-webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+    transform:rotate(5deg);
+}
+*/
 
 /*** PHOTO AREA ***/
 article.photo {
 	width:100%;
-	height:50px;
-	background:#eee;
+	background:#fff;
+	margin:0 0 30px;
+/* 	height:100px; */
+	overflow:hidden;
+	position:relative;
+	padding:0;
+	border-top:5px solid #444;
+	border-radius:4px 4px 0 0;
+	box-shadow:0 2px 2px rgba(0,0,0,.25);
 	
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+article.photo:hover {
+/* 	height:100%; */
+	border-top:5px solid #000;
+	
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+article.photo img {
+	max-width:100%;
+}
+
+article.photo span.caption {
+	display:block;
+	position:absolute;
+	left:0;
+	font-size:20px;
+	line-height:24px;
+	color:rgba(255,255,255,.9);
+	text-shadow:1px 2px 0px #000;
+	letter-spacing:1px;
+	width:94%;
+	padding:10% 3% 2%;
+	text-align:right;
+
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(3%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.75))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 3%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 3%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 3%,rgba(0,0,0,0.75) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 3%,rgba(0,0,0,0.75) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 ); /* IE6-9 */
+
+	opacity:0;
+	bottom:-8px;
+	
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+article.photo:hover span.caption {
+	opacity:1;
+	bottom:0;
+	
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*** FOOTER ***/
+footer {
+	background:rgba(0,0,0,.1);
+	margin-top:30px;
+}
+
+footer .wrap {
+	padding:20px 15px;
+	width:700px;
+	margin:auto;
+}
+
+footer .wrap p {margin:0;}
+footer .wrap p:before {
+	content: "\f08d";
+	font-family: "FontAwesome";
+	padding-right:15px;
 }
 
 /*** MEDIA QUERIES ***/
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {
-		#wrap {
-			width:auto;
-		}
+
 	}
 	
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
 	@media only screen and (min-width: 768px) and (max-width: 959px) {
-	
+		
 	}
 	
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
+		article.photo span.caption {
+			font-size:16px;
+		}
+	}
 	
+	/* Any screen 730px or less gets autosized picture */
+	@media only screen and (max-width: 731px) {
+		
+		section#content,
+		footer .wrap {
+			width:auto;
+		}
+		
 	}
 	
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -65,5 +255,7 @@ article.photo {
 	
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
-	
+		article.photo span.caption {
+			font-size:14px;
+		}
 	}

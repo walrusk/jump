@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>pagetitle</title>
+	<title>Jump</title>
 	
 	<link rel="shortcut icon" href="favicon.ico" /> 
 	
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="screen">
+	
+	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+	
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 		
 	<!--[if IE]>
@@ -25,5 +28,5 @@
 	<div id="wrap">
 	
 		<header>
-			<h1><a href="<?=base_url()?>">Jump</a></h1>
+			<h1><a href="<?=base_url()?>">Jump<i class="icon-camera-retro"></i></a></h1>
 		</header>

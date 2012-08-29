@@ -1,5 +1,7 @@
 		<footer>
-		
+			<div class="wrap">
+				<p>JUMP is a daily photo project created by <a href="http://normandev.com">NormanDev</a>.</p>
+			</div>
 		</footer>
 		
 	</div>
