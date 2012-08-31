@@ -59,6 +59,14 @@ class Jump extends CI_Controller {
 		$config['max_size']	= '1024';
 		$config['max_width']  = '1200';
 		$config['max_height']  = '1200';
+
+		// multiple photos on the same day
+		$postfixnum = 2;
+		while(file_exists($config['upload_path'].$config['file_name']))
+		{
+			$config['file_name'] = $newfilename.'_'.$postfixnum.'.jpg';
+			$postfixnum++;
+		}
 		
 		$this->load->library('upload', $config);
 

@@ -10,7 +10,7 @@ class Jump_model extends CI_Model {
 		$this->load->database();
     }
   
-    public function latest_x_days($x = 5)
+    public function latest_x_days($x = 3)
     {
     	$fetch_since = date('Y-m-d',strtotime('-'.$x.' days'));
     
