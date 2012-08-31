@@ -6,12 +6,14 @@
 	
 	<link rel="shortcut icon" href="favicon.ico" /> 
 	
-	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?=base_url('css/normalize.css')?>" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?=base_url('css/font-awesome.css')?>" type="text/css" media="screen">
 	
 	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css" type="text/css" media="screen">
 	
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?=base_url('css/style.css')?>" type="text/css" media="screen">
+
 		
 	<!--[if IE]>
 
