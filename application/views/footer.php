@@ -14,6 +14,7 @@
 	<script>window.jQuery || document.write('<script src="js/jquery-1.8.0.min.js"><\/script>')</script>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
 
 	<script src="js/script.js"></script>
 

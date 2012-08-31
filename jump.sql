@@ -8,7 +8,7 @@ CREATE TABLE `photos` (
 	user_id int(11) NOT NULL,
 	photopath varchar(140) NOT NULL,
 	caption varchar(140) NOT NULL DEFAULT "",
-	photodate datetime NOT NULL,
+	photodate date NOT NULL,
 	created datetime NOT NULL,
 	updated datetime NOT NULL,
 	PRIMARY KEY (id),

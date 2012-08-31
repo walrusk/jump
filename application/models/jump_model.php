@@ -10,9 +10,9 @@ class Jump_model extends CI_Model {
 		$this->load->database();
     }
   
-    public function latest_x_days($x = 3)
+    public function latest_x_days($x = 4)
     {
-    	$fetch_since = date('Y-m-d',strtotime('-'.$x.' days'));
+    	$fetch_since = date('Y-m-d',strtotime('-'.($x+1).' days'));
     
 	    $this->db->select('*');
 	    $this->db->order_by("photodate desc, id desc");
@@ -21,7 +21,17 @@ class Jump_model extends CI_Model {
 
 	    $query = $this->db->get('photos');
 	    
-	    return $query->result_array();
+	    $days = array();
+	    foreach($query->result_array() as $key => $photo)
+	    {
+	    	// add helpful classes/ids
+	    	$photo['index'] = $key;
+	    	
+	    	// add to days array
+	    	$days[ $photo['photodate'] ][] = $photo;
+	    }
+	    
+	    return $days;
     }  
     
     public function latest_x_photos($x = 5)

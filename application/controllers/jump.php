@@ -16,12 +16,15 @@ class Jump extends CI_Controller {
 		$this->load->model('Jump_model');
 	
 		$data = array(
-			'loggedin' => $this->tank_auth->is_logged_in(),
-			'photos' => $this->Jump_model->latest_x_days()
+			'days' => $this->Jump_model->latest_x_days()
 		);
 	
 		$this->load->view('header');
-		$this->load->view('home', $data);
+		
+		if($this->tank_auth->is_logged_in())
+			$this->load->view('form_newphoto');
+		
+		$this->load->view('content', $data);
 		$this->load->view('footer');
 	}
 	
@@ -49,8 +52,6 @@ class Jump extends CI_Controller {
 		$photodate = $this->input->post('photodate');
 		
 		$newfilename = strtolower(date('Y-F-d',strtotime($photodate)));
-		
-		if(!empty($photodate)) $photodate .= " 00:00:00"; // empty time for datetime format
 		
 		// CONFIGURE UPLOAD
 		$config['file_name'] = $newfilename.'.jpg';

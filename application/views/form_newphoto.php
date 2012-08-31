@@ -1,4 +1,3 @@
-<? if($loggedin): ?>
 <section id="create">
 
 	<?=(isset($error) ? $error : "");?>
@@ -12,7 +11,7 @@
 		</div>
 		<div class="photodate field">
 			<label for="newphoto_photodate">Date</label>
-			<input type="text" name="photodate" id="newphoto_photodate" value="Today">
+			<input type="text" name="photodate" id="newphoto_photodate" value="<?=date('Y-m-d');?>">
 		</div>
 		<div class="photoupload field">
 			<label for="newphoto_photoupload">Select New Photo</label>
@@ -24,24 +23,4 @@
 		
 	</form>
 	
-</section>
-<? endif; ?>
-<section id="content">
-	
-	<? foreach($photos as $photo): ?>
-	
-		<article class="photo">
-			<h2 class="date">
-				<? $ts = strtotime($photo['photodate']); ?>
-				<?= date('F',$ts); ?> <span><?= date('j',$ts); ?></span>
-			</h2>
-			<div class="data">
-				<img src="<?=base_url('/photos/'.$photo['photopath'])?>" alt="">
-				<span class="caption"><?=$photo['caption']?></span>
-			</div>
-			<div class="permalink"><a href="#">Permalink</a></div>		
-		</article>	
-	
-	<? endforeach; ?>
-						
 </section>
