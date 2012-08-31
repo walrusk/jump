@@ -41,6 +41,8 @@
 $route['default_controller'] = "jump";
 $route['404_override'] = '';
 
+$route['login'] = "auth/login";
+$route['logout'] = "auth/logout";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
