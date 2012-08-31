@@ -17,7 +17,7 @@ class Jump extends CI_Controller {
 	
 		$data = array(
 			'loggedin' => $this->tank_auth->is_logged_in(),
-			'photos' => $this->Jump_model->latest_x_photos()
+			'photos' => $this->Jump_model->latest_x_days()
 		);
 	
 		$this->load->view('header');
