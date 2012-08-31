@@ -527,7 +527,7 @@ section#create div.submit input:active {
 	@media only screen and (max-width: 900px) {	
 		.nextphotolink {right:-30px;}
 		.prevphotolink {left:-24px;}
-		.nextphotolink, .prevphotolink {opacity:.4;}
+		div.day:hover .nextphotolink,div.day:hover .prevphotolink {opacity:.4;}
 		.nextphotolink:before,.prevphotolink:before {font-size:36px;}
 	}	
 
