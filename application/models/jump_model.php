@@ -15,7 +15,7 @@ class Jump_model extends CI_Model {
     	$fetch_since = date('Y-m-d',strtotime('-'.$x.' days'));
     
 	    $this->db->select('*');
-	    $this->db->order_by("photodate desc, id asc");
+	    $this->db->order_by("photodate desc, id desc");
 
 	    $this->db->where('photodate >', $fetch_since);
 
