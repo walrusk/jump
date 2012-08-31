@@ -32,14 +32,17 @@ $(document).ready(function(){
 	
 	/*** NEXT/PREV PHOTO ARROWS ***/
 	$('div.day').append('<a href="#" class="nextphotolink">Next</a><a href="#" class="prevphotolink">Prev</a>');
-	$('.nextphotolink').click(function(){
-		scrollDay($(this).parent().next('.day'));
+	
+	$("div.day").on("click", ".nextphotolink", function(event){
+		scrollToDay($(this).parent().next('.day'));
 		return false;
 	});
-	$('.prevphotolink').click(function(){
-		scrollDay($(this).parent().prev('.day'));
+	
+	$("div.day").on("click", ".prevphotolink", function(event){
+		scrollToDay($(this).parent().prev('.day'));
 		return false;
-	});
+	});	
+	
 });
 
 /*** SKIP TO NEXT PICTURE IN STACK ***/
@@ -57,15 +60,12 @@ function nextPicInStack(currentphoto)
 }
 
 /*** SCROLL TO A NEW DAY ON THE PAGE ***/
-function scrollDay(newday)
+function scrollToDay(newday)
 {
 	if(newday.length == 1)
 	{
-		$.scrollTo(newday,300,{
-			axis: 'y',
-			offset: {
-				top:-35
-			}
-		});
+		$('html,body').animate({
+			scrollTop: newday.offset().top-35
+		}, 300);
 	}
 }

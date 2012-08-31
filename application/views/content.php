@@ -2,7 +2,7 @@
 	
 	<? // each day in the content
 	  foreach($days as $datestring => $day): ?>
-		<div class="day contains-<?=count($day)?>-photo">
+		<div class="day contains-<?=count($day)?>-photo" id="day_<?=$datestring?>">
 			<h2 class="date">
 				<? $ts = strtotime($datestring); ?>
 				<?= date('F',$ts); ?> <span><?= date('j',$ts); ?></span>
