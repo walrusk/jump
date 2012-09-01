@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Jump</title>
 	
+	<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+	
 	<link rel="shortcut icon" href="favicon.ico" /> 
 	
 	<link rel="stylesheet" href="<?=base_url('css/normalize.css')?>" type="text/css" media="screen">
