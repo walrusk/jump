@@ -572,7 +572,7 @@ section#create div.submit input:active {
 	
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
-		article.photo span.caption {
+		article.photo div.caption span {
 			font-size:16px;
 		}
 	}
@@ -584,7 +584,7 @@ section#create div.submit input:active {
 	
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
-		article.photo span.caption {
+		article.photo div.caption span {
 			font-size:14px;
 		}
 	}
