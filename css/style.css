@@ -380,11 +380,28 @@ div.day:last-of-type .nextphotolink {
 	display:none;
 }
 
+/*** CREDITS LIST ***/
+ul.credits li div {
+	display:inline;
+}
+
+/*** LINK BACK TO MAIN PAGE WITH ARROW ***/
+.back {
+	margin:30px 0 30px;
+}
+
+.back .button {
+	text-decoration:none;
+}
+
+.back .button i {
+	padding-right:5px;
+}
 
 /*** FOOTER ***/
 footer {
 	background:rgba(0,0,0,.1);
-	margin:0 0 20px;
+	margin:0 0 0px;
 	box-shadow:1px 1px 1px rgba(0,0,0,.2);
 }
 
@@ -423,6 +440,16 @@ footer a.logo:hover {
     -moz-transform:rotate(6deg);
     -o-transform:rotate(6deg);
     transform:rotate(6deg);
+}
+
+footer.credits {
+	background:none;
+	margin:auto;
+	width:700px;
+	padding:0 34px;
+	text-align:right;
+	box-shadow:none;
+	font-size:10px;
 }
 
 /*** ADMIN AREA ***/
@@ -471,7 +498,8 @@ section#create label {display:block;}
 section#create div.field {padding-bottom:15px;}
 section#create div.caption input {width:100%;}
 
-section#create div.submit input {
+section#create div.submit input,
+.button {
 	width:auto;
 	margin:10px 0;
 	cursor:pointer;
@@ -483,8 +511,8 @@ section#create div.submit input {
 	text-shadow:
 		0px -1px 0px rgba(255,255,255,0.1),
 		0px 1px 0px rgba(255,255,255,0.4);
-	text-transform:uppercase;
-	font-weight:bold;
+/* 	text-transform:uppercase; */
+/* 	font-weight:bold; */
 	position:relative;
 	top:0;
 	
@@ -507,7 +535,8 @@ section#create div.submit input {
 		to(#b5d986));
 }
 
-section#create div.submit input:active {
+section#create div.submit input:active,
+.button:active {
 	top:5px;
 	padding-bottom:7px;
 	box-shadow:
@@ -545,7 +574,7 @@ section#create div.submit input:active {
 	/* Any screen 800px or less gets autosized picture */
 	@media only screen and (max-width: 800px) {
 		section,
-		footer .wrap {
+		footer .wrap, footer.credits {
 			width:auto;
 		}
 		

@@ -45,7 +45,7 @@ class Jump extends CI_Controller {
 		}
 	}
 	
-	function newphoto()
+	public function newphoto()
 	{	
 		// GATHER DATA FOR NEW PHOTO
 		$caption = $this->input->post('caption');
@@ -96,7 +96,14 @@ class Jump extends CI_Controller {
 
 			redirect('');
 		}
-	}	
+	}
+	
+	public function credits()
+	{
+		$this->load->view('header');
+		$this->load->view('credits');
+		$this->load->view('footer');
+	}
 }
 
 /* End of file jump.php */

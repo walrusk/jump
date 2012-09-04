@@ -44,5 +44,7 @@ $route['404_override'] = '';
 $route['login'] = "auth/login";
 $route['logout'] = "auth/logout";
 
+$route['credits'] = "jump/credits";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

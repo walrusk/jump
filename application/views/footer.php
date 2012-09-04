@@ -7,6 +7,10 @@
 			</div>
 		</footer>
 		
+		<footer class="credits">
+			<p><?=anchor('credits','Credits &amp; Libraries')?></p>
+		</footer>
+		
 	</div>
 
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
