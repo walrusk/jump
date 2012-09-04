@@ -91,7 +91,7 @@ $captcha = array(
 		</td>
 	</tr>
 </table>
-<?php echo form_submit('submit', 'Let me in'); ?>
+<?php echo form_submit('submit', 'Let me in',array('class'=>'button')); ?>
 <?php echo form_close(); ?>
 
 </section>

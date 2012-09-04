@@ -498,6 +498,10 @@ section#create label {display:block;}
 section#create div.field {padding-bottom:15px;}
 section#create div.caption input {width:100%;}
 
+section#login {
+	padding-bottom:30px;
+}
+
 section#create div.submit input,
 .button {
 	width:auto;
