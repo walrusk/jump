@@ -13,6 +13,9 @@
 					<article class="photo" id="index_<?=$photo['index']?>">
 						<img src="<?=base_url('/photos/'.$photo['photopath'])?>" alt="">
 						<div class="caption"><span><?=$photo['caption']?></span></div>
+						<? if($loggedin): ?>
+							<a href="<?=base_url('jump/deletephoto/'.$photo['id'])?>" class="deletephoto">X</a>
+						<? endif; ?>
 					</article>
 			<? 	endforeach; ?>
 			

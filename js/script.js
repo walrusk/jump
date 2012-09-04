@@ -43,12 +43,18 @@ $(document).ready(function(){
 		return false;
 	});	
 	
+	
+	/*** delete photo ***/
+	$('a.deletephoto').click(function(){
+		return confirm("Really?");
+	});
+	
 });
 
 /*** SKIP TO NEXT PICTURE IN STACK ***/
 function nextPicInStack(currentphoto)
 {
-	if(currentphoto.is(':last-of-type') && currentphoto.css('opacity') == '1')
+	if(currentphoto.is(':last-of-type') && !currentphoto.is(':first-of-type') && currentphoto.css('opacity') == '1')
 	{
 		currentphoto.css('opacity',0);
 	

@@ -72,4 +72,9 @@ class Jump_model extends CI_Model {
 	    
 	    return $this->db->insert('photos', $photodata);
     }
+    
+    public function delete_photo($photo_id)
+    {
+	    return $this->db->delete('photos', array('id' => $photo_id)); 
+    }
 }

@@ -16,6 +16,7 @@ class Jump extends CI_Controller {
 		$this->load->model('Jump_model');
 	
 		$data = array(
+			'loggedin' => $this->tank_auth->is_logged_in(),
 			'days' => $this->Jump_model->latest_x_days()
 		);
 	
@@ -37,11 +38,15 @@ class Jump extends CI_Controller {
 	public function deletephoto()
 	{
 		if (!$this->tank_auth->is_logged_in()) {
-			redirect('/auth/login/');
+			redirect('/login/');
 		} else {
-			$data['user_id'] = $this->tank_auth->get_user_id();
-			$data['username'] = $this->tank_auth->get_username();
-			$this->load->view('welcome', $data);
+			
+			$photo_id = $this->uri->segment(3);
+			
+			$this->load->model('Jump_model');
+			$this->Jump_model->delete_photo($photo_id);
+			
+			redirect('');
 		}
 	}
 	
