@@ -604,6 +604,8 @@ section#create div.submit input:active,
 		article.photo div.caption span {
 			font-size:16px;
 		}
+		
+		div.day h2.date {opacity:1;top:-23px;}
 	}
 	
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
