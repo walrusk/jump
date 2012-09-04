@@ -1,5 +1,9 @@
 <section id="content">
 	
+	<? if(isset($archive) && $archive): ?>
+		<span class="back"><?=anchor('','<i class="icon-arrow-left"></i> Back to front page')?></span>
+	<? endif; ?>
+	
 	<? // each day in the content
 	  foreach($days as $datestring => $day): ?>
 		<div class="day contains-<?=count($day)?>-photo" id="day_<?=$datestring?>">
@@ -22,5 +26,11 @@
 			<span class="albumlink"><a href="#">Album</a></span>
 		</div>
 	<? endforeach; ?>
-						
+	
+	<? if(!isset($archive) || !$nomore): ?>
+	<span class="archivelink">
+		<?=anchor('archive/'.$nextday,'More <i class="icon-arrow-right"></i>')?>
+	</span>
+	<? endif; ?>
+	
 </section>

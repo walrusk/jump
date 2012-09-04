@@ -46,5 +46,7 @@ $route['logout'] = "auth/logout";
 
 $route['credits'] = "jump/credits";
 
+$route['archive/(:any)'] = "jump/archive/$2";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

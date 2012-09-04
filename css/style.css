@@ -206,6 +206,53 @@ article.photo:last-of-type .deletephoto {
 	text-decoration:none;
 }
 
+/*** BACK LINK ***/
+span.back {
+	display:block;
+	margin:15px 0;
+}
+span.back a {
+	text-decoration:none;position:relative;left:0;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;	
+}
+span.back a:hover {
+	left:-10px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;	
+}
+
+/*** ARCHIVE LINK ***/
+div.day:last-of-type {
+	padding-bottom:30px;
+}
+
+.archivelink {
+	display:block;
+	text-align:right;
+	margin-bottom:30px;
+}
+.archivelink a {
+	text-decoration:none;position:relative;left:0;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;		
+}
+.archivelink a i {padding-left:2px;}
+
+.archivelink a:hover {
+	left:10px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;	
+}
+
 /*** PHOTO CAPTION ***/
 article.photo div.caption {
 	width:100%;

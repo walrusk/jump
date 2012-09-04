@@ -17,8 +17,11 @@ class Jump extends CI_Controller {
 	
 		$data = array(
 			'loggedin' => $this->tank_auth->is_logged_in(),
-			'days' => $this->Jump_model->latest_x_days()
+			'days' => $this->Jump_model->last_x_days(5),
 		);
+	
+		$lastday = strtotime(array_pop(array_keys($data['days'])));
+		$data['nextday'] = date('Y-m-d',strtotime('-1 day',$lastday));
 	
 		$this->load->view('header');
 		
@@ -32,6 +35,28 @@ class Jump extends CI_Controller {
 	public function day()
 	{
 		
+	}
+	
+	public function archive()
+	{
+		$this->load->model('Jump_model');
+	
+		$last_date_displayed = $this->uri->segment(2);
+	
+		$data = array(
+			'loggedin' => $this->tank_auth->is_logged_in(),
+			'days' => $this->Jump_model->last_x_days(5, $last_date_displayed),
+			'archive' => TRUE
+		);
+		
+		$data['nomore'] = in_array('2012-08-28', array_keys($data['days']));
+		
+		$lastday = strtotime(array_pop(array_keys($data['days'])));
+		$data['nextday'] = date('Y-m-d',strtotime('-1 day',$lastday));
+		
+		$this->load->view('header');
+		$this->load->view('content', $data);
+		$this->load->view('footer');
 	}
 	
 	/*** ADMIN ACTIONS ***/

@@ -10,11 +10,46 @@ class Jump_model extends CI_Model {
 		$this->load->database();
     }
   
-    public function latest_x_days($x = 5)
+    public function photos_from_timeframe($date, $seconddate)
     {
-    	$days = array();
+	    if(!is_numeric($date)) $date = strtotime($date);
+	    if(!is_numeric($seconddate)) $seconddate = strtotime($seconddate);
     
-    	// get last photo
+	    $days = array();
+	    
+	    $this->db->select('*');
+	    $this->db->order_by("photodate desc, id desc");
+
+	    if($seconddate > $date)
+	    {
+	    	$this->db->where('photodate <=', date('Y-m-d',$seconddate));
+	    	$this->db->where('photodate >=', date('Y-m-d',$date));
+	    }
+	    else
+	    {	
+	    	$this->db->where('photodate <=', date('Y-m-d',$date));
+	    	$this->db->where('photodate >=', date('Y-m-d',$seconddate));
+	    }	    
+
+	    $query = $this->db->get('photos');
+	    
+	    foreach($query->result_array() as $key => $photo)
+	    {
+	    	// add helpful classes/ids
+	    	$photo['index'] = $key;
+	    	
+	    	// add to days array
+	    	$days[ $photo['photodate'] ][] = $photo;
+	    }
+	    
+	    return $days;
+    }
+  
+    public function last_date_photo_taken()
+    {
+    	$toreturn = "0000-00-00";
+    
+	    // get last photo
     	$this->db->select('photodate');
 	    $this->db->order_by("photodate desc, id desc");
 	    $this->db->limit(1);
@@ -22,39 +57,21 @@ class Jump_model extends CI_Model {
 	    
 	    if($query->num_rows() > 0)
 	    {
-		    $lastimage = $query->row_array();
-		    $fetch_since = date('Y-m-d',strtotime('-'.($x+1).' days',strtotime($lastimage['photodate'])));
-    
-		    $this->db->select('*');
-		    $this->db->order_by("photodate desc, id desc");
-	
-		    $this->db->where('photodate >', $fetch_since);
-	
-		    $query = $this->db->get('photos');
-		    
-		    
-		    foreach($query->result_array() as $key => $photo)
-		    {
-		    	// add helpful classes/ids
-		    	$photo['index'] = $key;
-		    	
-		    	// add to days array
-		    	$days[ $photo['photodate'] ][] = $photo;
-		    }
+	    	$lastimage = $query->row_array();
+	    	$toreturn = $lastimage['photodate'];
 	    }
 	    
-	    return $days;
-    }  
-    
-    public function latest_x_photos($x = 5)
+	    return $toreturn;
+    }
+  
+    public function last_x_days($x = 7, $starting_point = "last-taken")
     {
-	    $this->db->select('*');
-	    $this->db->limit($x);
-	    $this->db->order_by("photodate desc, id asc");
-
-	    $query = $this->db->get('photos');
-	    
-	    return $query->result_array();
+    	if($starting_point == "last-taken") $starting_point = $this->last_date_photo_taken();
+    
+    	$from = strtotime($starting_point);
+    	$to = strtotime('-'.($x-1).' days',$from);
+    
+	    return $this->photos_from_timeframe($from, $to);
     }
     
     public function save_photo($date, $path, $caption = "") /* requires photo date and path, caption is optional */
