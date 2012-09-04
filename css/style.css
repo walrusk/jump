@@ -52,7 +52,7 @@ section {
 /*** HEADER ***/
 
 header h1 {
-	margin:0;
+	margin:0 0 20px;
 	padding:0;
 	text-align:center;
 	letter-spacing:1px;
@@ -116,7 +116,7 @@ header h1 a:active {
 
 div.day {
 	position:relative;
-	padding-bottom:30px;
+	padding-bottom:60px;
 }
 
 /*** PHOTOS ***/
@@ -556,6 +556,17 @@ section#create div.submit input:active,
 
 /*** MEDIA QUERIES ***/
 
+div.day h2.date {opacity:1;top:-23px;}
+
+article.photo:nth-last-of-type(2) {
+	-webkit-transform:rotate(1deg);
+    -moz-transform:rotate(1deg);
+    -o-transform:rotate(1deg);
+    transform:rotate(1deg);
+    top:5px;left:15px;
+	opacity:1;
+}
+
 	/*** move arrows if there is no room for them! ***/
 	@media only screen and (max-width: 900px) {	
 		.nextphotolink,.prevphotolink {
@@ -578,7 +589,8 @@ section#create div.submit input:active,
 			width:auto;
 		}
 		
-		article.photo:nth-last-of-type(2) {
+		/*
+article.photo:nth-last-of-type(2) {
 			-webkit-transform:rotate(1deg);
 		    -moz-transform:rotate(1deg);
 		    -o-transform:rotate(1deg);
@@ -586,6 +598,7 @@ section#create div.submit input:active,
 		    top:5px;left:15px;
 			opacity:1;
 		}
+*/
 	}
 
 
@@ -605,7 +618,7 @@ section#create div.submit input:active,
 			font-size:16px;
 		}
 		
-		div.day h2.date {opacity:1;top:-23px;}
+		/* div.day h2.date {opacity:1;top:-23px;} */
 	}
 	
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
