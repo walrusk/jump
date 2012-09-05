@@ -9,6 +9,7 @@ CREATE TABLE `photos` (
 	photopath varchar(140) NOT NULL,
 	caption varchar(140) NOT NULL DEFAULT "",
 	photodate date NOT NULL,
+	sequence int(11) NOT NULL DEFAULT 0,	
 	created datetime NOT NULL,
 	updated datetime NOT NULL,
 	PRIMARY KEY (id),

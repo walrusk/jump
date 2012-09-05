@@ -18,7 +18,7 @@ class Jump_model extends CI_Model {
 	    $days = array();
 	    
 	    $this->db->select('*');
-	    $this->db->order_by("photodate desc, id desc");
+	    $this->db->order_by("photodate desc, sequence asc, id desc");
 
 	    if($seconddate > $date)
 	    {
